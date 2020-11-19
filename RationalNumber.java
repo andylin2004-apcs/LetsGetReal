@@ -8,7 +8,13 @@ public class RationalNumber extends RealNumber
   *@param deno the denominator
   */
   public RationalNumber(int nume, int deno){
-    super(0.0);//this value is ignored!
+    if (deno == 0){
+      numerator = 0;
+      denominator = 1;
+    }else{
+      numerator = nume;
+      denominator = deno;
+    }
   }
 
   public double getValue(){
@@ -38,7 +44,7 @@ public class RationalNumber extends RealNumber
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    return (this.numerator == other.numerator) && (this.denominator == other.denominator);
+    return (this.getNumerator() == other.getNumerator()) && (this.getDenominator() == other.getDenominator());
   }
 
 
@@ -91,14 +97,17 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return RationalNumber(this.numerator*other.denominator, this.denominator*other.numerator);
+    return RationalNumber(this.numerator()*other.denominator(), this.denominator()*other.numerator());
   }
 
   /**
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return null;
+    a = this.reduce();
+    b = other.reduce();
+
+    return RationalNumber(this.numerator)
   }
   /**
   *Return a new RationalNumber that this minus the other
