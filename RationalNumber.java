@@ -16,7 +16,6 @@ public class RationalNumber extends RealNumber
       numerator = nume;
       denominator = deno;
       reduce();
-      fixFrac();
     }
   }
 
@@ -94,10 +93,6 @@ public class RationalNumber extends RealNumber
     int gcd = gcd(numerator,denominator);
     numerator = numerator/gcd;
     denominator = denominator/gcd;
-    fixFrac();
-  }
-
-  private void fixFrac(){
     if (denominator < 1){
       numerator *= -1;
       denominator *= -1;
