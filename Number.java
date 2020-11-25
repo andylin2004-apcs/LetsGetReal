@@ -21,10 +21,10 @@ public abstract class Number{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(Number other){
-    double a = Math.round((double)this.getValue()*10000);
-    double b = Math.round((double)other.getValue()*10000);
-    a /= 10000;
-    b /= 10000;
+    double a = Math.round((double)this.getValue()*1000000);
+    double b = Math.round((double)other.getValue()*1000000);
+    a /= 1000000;
+    b /= 1000000;
     return a == b;
   }
 }
