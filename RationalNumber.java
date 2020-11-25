@@ -19,7 +19,7 @@ public class RationalNumber extends Number
   }
 
   public double getValue(){
-    double inital = Math.round(numerator*10000/denominator);
+    double inital = Math.round(numerator*10000/(double)denominator);
     return inital/10000;
   }
 

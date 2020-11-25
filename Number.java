@@ -6,12 +6,12 @@ public abstract class Number{
   return a positive value when this Number is larger than the other Number
   */
   public int compareTo(Number other){
-    if (this.getValue() == other.getValue()){
+    if ((double)this.getValue() == (double)other.getValue()){
       return 0;
-    }else if (this.getValue() < other.getValue()){
-      return this.getValue()*-1;
+    }else if ((double)this.getValue() < (double)other.getValue()){
+      return (int)this.getValue()*-1;
     }else{
-      return this.getValue();
+      return (int)this.getValue();
     }
   }
 
@@ -21,6 +21,10 @@ public abstract class Number{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(Number other){
-    return this.getValue() == other.getValue();
+    double a = Math.round((double)this.getValue()*10000);
+    double b = Math.round((double)other.getValue()*10000);
+    a /= 10000;
+    b /= 10000;
+    return a == b;
   }
 }
