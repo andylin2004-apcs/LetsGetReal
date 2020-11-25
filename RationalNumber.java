@@ -19,8 +19,9 @@ public class RationalNumber extends Number
   }
 
   public double getValue(){
-    double inital = Math.round(numerator*10000/(double)denominator);
-    return inital/10000;
+    // double inital = Math.round(numerator*10000/(double)denominator);
+    // return inital/10000;
+    return numerator/(double)denominator;
   }
 
   /**
@@ -76,6 +77,9 @@ public class RationalNumber extends Number
       temp = a;
       a = b;
       b = temp;
+    }
+    if (b == 0){
+      return 1;
     }
     temp = a%b;
     while (temp != 0){
