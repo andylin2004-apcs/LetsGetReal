@@ -9,9 +9,9 @@ public abstract class Number{
     if ((double)this.getValue() == (double)other.getValue()){
       return 0;
     }else if ((double)this.getValue() < (double)other.getValue()){
-      return (int)this.getValue()*-1;
+      return -1;
     }else{
-      return (int)this.getValue();
+      return 1;
     }
   }
 
